@@ -13,7 +13,7 @@ function DetailView(atk, def, options) {
 };
 
 //Renders the basic 1v1 win probability with the given army sizes
-function renderWinProbability() {
+function renderWinProbability(probability) {
 	
 }
 
