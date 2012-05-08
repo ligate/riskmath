@@ -1,19 +1,20 @@
-function DetailView() {
-	var self = Ti.UI.createView();
+function DetailView(atk, def, options) {
+	var math = require('math/math');
+	var self = Ti.UI.createWebView();
 	
-	var lbl = Ti.UI.createLabel({
-		text:'Please select an item',
-		height:'auto',
-		width:'auto',
-		color:'#000'
-	});
-	self.add(lbl);
+	//Initialize values to defaults if necessary
+	atk = atk || 0;
+	def = def || 0;
+	options = options || {};
 	
-	self.addEventListener('itemSelected', function(e) {
-		lbl.text = e.name+': $'+e.price;
-	});
+	//Calculate 1v1 win probability
 	
 	return self;
 };
+
+//Renders the basic 1v1 win probability with the given army sizes
+function renderWinProbability() {
+	
+}
 
 module.exports = DetailView;

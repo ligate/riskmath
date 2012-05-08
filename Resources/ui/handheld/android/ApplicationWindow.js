@@ -6,6 +6,7 @@ function ApplicationWindow() {
 	//create object instance
 	var self = Ti.UI.createWindow({
 		title:'RiskMath',
+		layout: 'vertical',
 		exitOnClose:true,
 		navBarHidden:false,
 		backgroundColor:'#ffffff'
