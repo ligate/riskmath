@@ -10,6 +10,7 @@ exports.TYPE_PHONE = 'phone';
 exports.TYPE_PICKER = 'picker';
 exports.TYPE_TEXT = 'text';
 exports.TYPE_SUBMIT = 'submit';
+exports.TYPE_SWITCH = 'switch'
 
 var isAndroid = Ti.Platform.osname === 'android';
 var textFieldDefaults = {
@@ -125,6 +126,13 @@ var addField = function(field, fieldRefs) {
 			form.fireEvent(id, {values:values});	
 		});	
 		form.container.add(button);
+	} else if (type == exports.TYPE_SWITCH) {
+		if(isAndroid) {
+			fieldObject = Ti.UI.createSwitch({
+				style: Ti.UI.Android.SWITCH_STYLE_CHECKBOX,
+				title: title
+			});
+		}
 	}
 	
 	// Add our prepared UI component to the form
