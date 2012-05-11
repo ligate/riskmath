@@ -1,6 +1,11 @@
 function DetailView(atk, def, options) {
 	var self = Ti.UI.createWebView();
 	
+	Ti.API.debug("DetailView got:");
+	Ti.API.debug("atk:" + atk);
+	Ti.API.debug("def:" + def);
+	Ti.API.debug("Options:" + options);
+	
 	//Initialize values to defaults if necessary
 	atk = atk || 0;
 	def = def || 0;
