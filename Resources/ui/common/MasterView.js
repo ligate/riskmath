@@ -4,6 +4,8 @@ var atk_def_width = '50dp';
 var plus_minus_width = '40dp';
 var top = '10dp';
 
+var atk_box, def_box;
+
 var textFieldDefaults = {
 	height: form_element_height,
 	width: atk_def_width,
@@ -66,7 +68,7 @@ function createAttackerPanel(view) {
 	var atk_view = Ti.UI.createView({
 		layout: 'horizontal'
 	});
-	var atk_box = Ti.UI.createTextField(textFieldDefaults);
+	atk_box = Ti.UI.createTextField(textFieldDefaults);
 	var atk_plus = Ti.UI.createButton({
 		title: "+",
 		top: top,
@@ -81,9 +83,9 @@ function createAttackerPanel(view) {
 	});
 	
 	//Attack box and increment/decrement listeners
-	atk_box.addEventListener('change',function(e){
-	    atk_box.value = atk_box.value.replace(/[^0-9]+/,"");
-	});
+	// atk_box.addEventListener('change',function(e){
+	    // atk_box.value = atk_box.value.replace(/[^0-9]+/,"");
+	// });
 	atk_plus.addEventListener('click', function() {
 		var val = parseInt(atk_box.value);
 		atk_box.value =  (val + 1).toString();
@@ -119,7 +121,7 @@ function createDefenderPanel(view) {
 	var def_view = Ti.UI.createView({
 		layout: 'horizontal'
 	});
-	var def_box = Ti.UI.createTextField(textFieldDefaults);
+	def_box = Ti.UI.createTextField(textFieldDefaults);
 	var def_plus = Ti.UI.createButton({
 		title: "+",
 		top: top,

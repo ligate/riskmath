@@ -18,8 +18,15 @@ function ApplicationWindow() {
 
 	//add behavior for master view
 	masterView.addEventListener('formSubmit', function(e) {
-		//create detail view container
-		var detailView = new DetailView();
+		Ti.API.debug("formSubmit:" + JSON.stringify(e));
+		
+		//Get args
+		var atk = e.atk;
+		var def = e.def;
+		var opts = e.options;
+		
+		//Create detail view
+		var detailView = new DetailView(atk, def, opts);
 		var detailContainerWindow = Ti.UI.createWindow({
 			title:'Probabilities',
 			navBarHidden:false,
